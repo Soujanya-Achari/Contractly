@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client - Contractly</title>
+    <link rel="stylesheet" href="css/rolestyles.css">
+</head>
+<body background="img/bg.webp">
+    <header>
+        <nav>
+            <div class="logo">Contractly</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cta-buttons"></div>
+                <button class="cta-button" onclick="openAccount()">My Account</button>
+                <button class="cta-button" onclick="openLogin()">Logout</button>
+        </div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome, Client!</h1>
+            <p>Manage your projects, hire contractors, and track progress seamlessly.</p>
+            <button class="cta-button" onclick="openProjectPortal()">Start a Project</button>
+            <button class="cta-button" onclick="window.location.href='/track-projects.html'">Track Projects</button>
+        </div>
+    </section>
+
+    
+
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@contractly.com</p>
+        <p>Phone: +91xxxxxxxxxx</p>
+        <p>© 2024 Contractly. All rights reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+</body>
+</html>

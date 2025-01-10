@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Features | Contractly</title>
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body>
+    <div class="client-page">
+        <header class="animated-header">
+            <h1>Client Features</h1>
+            <p>Discover how Contractly helps clients manage projects effortlessly.</p>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <h2>Find Reliable Contractors</h2>
+                <p>Easily search and connect with trusted contractors for your projects.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Track Project Progress</h2>
+                <p>Stay updated with real-time project statuses and timelines.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Save Time and Money</h2>
+                <p>Streamline your workflow with a user-friendly platform that ensures efficiency.</p>
+            </div>
+        </section>
+
+        <footer class="actions">
+            <button onclick="goBack()" class="back-button">Back</button>
+            <button onclick="openSignup()" class="signup-button">Sign Up</button>
+            <button onclick="openLogin()" class="login-button">Login</button>
+        </footer>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function openSignup() {
+            window.location.href = 'signup.html';
+        }
+
+        function openLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

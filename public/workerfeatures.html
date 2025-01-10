@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worker Features | Contractly</title>
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body>
+    <div class="worker-page">
+        <header class="animated-header">
+            <h1>Worker Features</h1>
+            <p>Explore how Contractly empowers workers with better opportunities and tools.</p>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <h2>Find New Jobs</h2>
+                <p>Get access to a variety of projects from reliable contractors and clients.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Manage Your Work</h2>
+                <p>Keep track of assigned tasks and stay updated on project progress.</p>
+            </div>
+            <div class="feature-card">
+                <h2>Grow Your Skills</h2>
+                <p>Work on diverse projects and enhance your expertise while earning.</p>
+            </div>
+        </section>
+
+        <footer class="actions">
+            <button onclick="goBack()" class="back-button">Back</button>
+            <button onclick="openSignup()" class="signup-button">Sign Up</button>
+            <button onclick="openLogin()" class="login-button">Login</button>
+        </footer>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        function openSignup() {
+            window.location.href = 'signup.html';
+        }
+
+        function openLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

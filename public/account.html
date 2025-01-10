@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Contractly</title>
+    <link rel="stylesheet" href="css/account.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Contractly</div>
+        </nav>
+    </header>
+
+    <section id="profile-section">
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img id="profileImage" src="img/images.png" alt="Profile Picture">
+                <button class="upload-btn" onclick="uploadProfilePicture()">Change Photo</button>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;" onchange="updateProfilePicture()">
+            </div>
+            <div class="profile-details">
+                <h1 id="username">Your Name</h1>
+                <p id="bio">Click 'Edit' below to add your bio.</p>
+                <button class="edit-btn" onclick="openEditModal()">Edit Profile</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="edit-section" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeEditModal()">&times;</span>
+            <h2>Edit Profile</h2>
+            <form id="editForm">
+                <label for="usernameInput">Name:</label>
+                <input type="text" id="usernameInput" placeholder="Enter your name" required>
+                
+                <label for="bioInput">Bio:</label>
+                <textarea id="bioInput" rows="4" placeholder="Write about yourself"></textarea>
+                
+                <button type="button" class="save-btn" onclick="saveProfile()">Save Changes</button>
+            </form>
+        </div>
+    </section>
+
+    
+    <button class="cta-button back-button" onclick="goBack()">Back</button>
+    <script src="js/account.js"></script>
+</body>
+</html>

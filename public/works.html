@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - Contractly</title>
+  <link rel="stylesheet" href="css/works.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">Contractly</div>
+  </header>
+
+  <main class="main-content">
+    <section class="worker-info">
+      <h1>Welcome, Worker</h1>
+      <p id="worker-info">Here are your tasks:</p>
+    </section>
+
+    <section class="tasks-section">
+      <h2>Your Tasks</h2>
+      <div class="task-cards" id="assignment-list">
+        <!-- Task cards will be inserted here -->
+      </div>
+    </section>
+
+    <!-- Modal for task details -->
+    <div class="modal" id="task-modal">
+      <div class="modal-content">
+        <span class="close-btn" id="close-btn">&times;</span>
+        <h3>Task Details</h3>
+        <p id="task-detail">Loading...</p>
+      </div>
+    </div>
+  </main>
+  <button class="cta-button back-button" onclick="goBack()">Back</button>
+  <footer>
+    <p>&copy; 2024 Contractly. All Rights Reserved.</p>
+  </footer>
+
+  <script>// Mock task data
+    const assignments = [
+      { id: 1, task: 'Paint the house', description: 'Paint the exterior of the house with high-quality paint.', dueDate: '2025-01-15', status: 'pending' },
+      { id: 2, task: 'Fix plumbing in the kitchen', description: 'Replace broken pipes and check water pressure.', dueDate: '2025-03-10', status: 'pending' },
+      { id: 3, task: 'Install new cabinets', description: 'Install custom kitchen cabinets.', dueDate: '2025-02-18', status: 'pending' },
+      { id: 4, task: 'Repair the roof', description: 'Fix leaks and check overall roof condition.', dueDate: '2024-12-12', status: 'completed' },
+    ];
+    
+    // Fetch worker-specific assignments and display them as cards
+    const assignmentList = document.getElementById('assignment-list');
+    
+    // Function to create task cards
+    function displayAssignments() {
+      assignments.forEach(assignment => {
+        const card = document.createElement('div');
+        card.classList.add('task-card');
+        card.innerHTML = `
+          <h3>${assignment.task}</h3>
+          <p>Due Date: ${new Date(assignment.dueDate).toLocaleDateString()}</p>
+          <p>Status: ${assignment.status}</p>
+        `;
+    
+        // Add event listener for the card to show more details
+        card.addEventListener('click', () => showTaskDetails(assignment));
+        assignmentList.appendChild(card);
+      });
+    }
+    
+    // Function to show task details in a modal
+    function showTaskDetails(assignment) {
+      const taskDetail = document.getElementById('task-detail');
+      taskDetail.innerHTML = `
+        <strong>Description:</strong> ${assignment.description}<br>
+        <strong>Due Date:</strong> ${new Date(assignment.dueDate).toLocaleDateString()}<br>
+        <strong>Status:</strong> ${assignment.status}
+      `;
+    
+      // Show the modal
+      document.getElementById('task-modal').style.display = 'block';
+    }
+    
+    // Close the modal when clicking the close button
+    document.getElementById('close-btn').addEventListener('click', () => {
+      document.getElementById('task-modal').style.display = 'none';
+    });
+    
+    // Initialize the page with worker tasks
+    window.onload = displayAssignments;
+
+    function goBack() {
+    window.history.back();
+  }
+    </script>
+</body>
+</html>

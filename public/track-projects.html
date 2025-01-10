@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Projects - Contractly</title>
+    <link rel="stylesheet" href="css/track-styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Contractly</div>
+    </header>
+    
+    <main>
+        <section class="tracking-container">
+            <h1>Track Your Projects</h1>
+            
+           
+
+            <!-- Display search results or all projects -->
+            <div id="projects-list">
+                <!-- Projects will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Project Details Popup -->
+    <div id="project-popup" class="popup">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">X</button>
+            <div id="project-details">
+                <!-- Detailed project info will be displayed here -->
+            </div>
+            <button class="cta-button back-button" onclick="closePopup()">Back</button>
+        </div>
+    </div>
+
+    <button class="cta-button back-button" onclick="goBack()">Back</button>
+
+    <script src="js/track-scripts.js"></script>
+</body>
+</html>

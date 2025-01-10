@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Project</title>
+    <link rel="stylesheet" href="css/project-styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Contractly</div>
+            <button class="cta-button" onclick="openAccount()">Account</button> 
+        </nav>
+    </header>
+    
+    <main>
+        <section class="project-form-container">
+            <h1>Add Your Project</h1>
+            <p>Provide all the necessary details about your project to connect with the best contractors.</p>
+    
+            <form id="project-form">
+                <div class="form-group">
+                    <label for="project-title">Project Title</label>
+                    <input type="text" id="project-title" placeholder="Enter your project title" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="project-description">Project Description</label>
+                    <textarea id="project-description" rows="5" placeholder="Describe your project in detail" required></textarea>
+                </div>
+    
+                <div class="form-group">
+                    <label for="category">Project Category</label>
+                    <select id="category" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="construction">Construction</option>
+                        <option value="painting">Painting</option>
+                        <option value="plumbing">Plumbing</option>
+                        <option value="electrical">Electrical Work</option>
+                    </select>
+                </div>
+    
+                <div class="form-group">
+                    <label for="deadline">Deadline</label>
+                    <input type="date" id="deadline" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="budget">Budget </label>
+                    <input type="number" id="budget" placeholder="Enter your budget" required>
+                </div>
+    
+                <button type="submit" class="submit-btn">Submit Project</button>
+            </form>
+        </section>
+    </main>
+    
+    <button class="cta-button back-button" onclick="goBack()">Back</button>
+
+    <script>
+        document.getElementById('project-form').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent the default form submission
+          
+            const title = document.getElementById('project-title').value.trim();
+            const description = document.getElementById('project-description').value.trim();
+            const category = document.getElementById('category').value;
+            const deadline = document.getElementById('deadline').value;
+            const budget = document.getElementById('budget').value;
+          
+            // Validation: Project Title
+            const titleRegex = /^[a-zA-Z\s]+$/; // Only letters and spaces allowed
+            if (!titleRegex.test(title) || title.trim() === "") {
+              alert("Project title should only contain letters and spaces, and should not be empty.");
+              return;
+            }
+          
+            // Validation: Project Description
+            if (description.length < 20) {
+              alert("Please provide a detailed description of your project (at least 20 characters).");
+              return;
+            }
+          
+            // Validation: Category
+            if (!category) {
+              alert("Please select a project category.");
+              return;
+            }
+          
+            // Validation: Deadline
+            const currentDate = new Date().toISOString().split("T")[0]; // Get current date in YYYY-MM-DD format
+            if (deadline < currentDate) {
+              alert("The deadline cannot be before today's date.");
+              return;
+            }
+          
+            // Proceed with form submission if all validations pass
+            try {
+              const response = await fetch('/api/projects/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, description, category, deadline, budget }),
+              });
+          
+              const result = await response.json();
+              alert(result.message); // Show success or error message
+            } catch (error) {
+              console.error('Error during project submission:', error);
+              alert('Failed to submit the project.');
+            }
+          });
+          
+        function openAccount() {
+            window.location.href = "account.html";
+        }
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

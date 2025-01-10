@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Success</title>
+  <link rel="stylesheet" href="css/sucess.css">
+</head>
+<body>
+  <div class="success-container">
+    <h2 class="success-title">Login Successful!</h2>
+    <p class="success-message">Redirecting to your dashboard...</p>
+  </div>
+  <script>
+    // Redirect based on the role after 2 seconds
+setTimeout(() => {
+  const userRole = localStorage.getItem("userRole"); // Get the saved role
+
+  if (userRole === "contractor") {
+    window.location.href = "contractor.html";
+  } else if (userRole === "client") {
+    window.location.href = "client.html";
+  } else if (userRole === "worker") {
+    window.location.href = "worker.html";
+  } else {
+    // If no role is found, redirect to the login page
+    window.location.href = "login.html";
+  }
+}, 2000); // Delay of 2 seconds
+
+  </script>
+</body>
+</html>
