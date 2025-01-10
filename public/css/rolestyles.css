@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    color: #fff;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(-45deg, #cdb114 5%, #a53708 95%);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffcc66;
+}
+/* Container for CTA buttons */
+.cta-buttons {
+    display: inline-flex; /* Ensures buttons are inline and closely aligned */
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Minimal space between buttons */
+    margin: 0; /* Remove any additional margin around the container */
+    padding: 0; /* Remove any padding */
+}
+
+/* My Account Button */
+.cta-button {
+    background: white;
+    color: #a53708;
+    padding: 8px 15px; /* Adjusted padding for better alignment */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 14px; /* Ensure consistent font size */
+}
+
+.cta-button:hover {
+    background: #ffcc66;
+    transform: scale(1.05);
+}
+
+/*/* Flex container for the buttons */
+.cta-buttons {
+    display: flex; /* Aligns buttons in a row */
+    align-items: center; /* Vertically centers buttons */
+    gap: 0; /* Removes all spacing between buttons */
+    margin-left: auto; /* Pushes the buttons to the right */
+}
+
+/* My Account Button */
+.cta-button {
+    background: white;
+    color: #a53708;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    border-radius: 0; /* Removes rounded corners for seamless join */
+    cursor: pointer;
+    margin: 1px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+    border: 1px solid #a53708; /* Adds border for better button visibility */
+}
+
+/* Add hover effect */
+.cta-button:hover {
+    background: #ffcc66;
+    transform: scale(1.05);
+}
+
+/* First button (My Account) styling */
+.cta-button:first-child {
+    border-right: none;
+    border-radius: 2px; /* Remove right border to connect seamlessly */
+}
+
+/* Last button (Logout) styling */
+.cta-button:last-child {
+    border-left: none;
+    border-radius: 2px; /* Remove left border to connect seamlessly */
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px;  /* Distance from the right side of the viewport */
+    background-color: #a53708; /* Matches your color theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #cdb114; /* Slightly lighter color for hover effect */
+}
+
+
+/* Optional: Adjust margins for nav alignment */
+.nav-links {
+    margin-right: auto; /* Push navigation links to the left */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.hero {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    animation: fadeIn 1.5s ease;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    animation: fadeIn 2s ease;
+}
+
+.account-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 15px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(-45deg, #a53708 5%, #cdb114 95%);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,164 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(-45deg, #cdb114 5%, #a53708 95%);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}/* Navbar */
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    color: #ffcc66;
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: #ffcc66;
+}
+
+/* Fix for Account button */
+.cta-button {
+    background-color: #ffcc66;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #cdb114;
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px;  /* Distance from the right side of the viewport */
+    background-color: #a53708; /* Matches your color theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #cdb114; /* Slightly lighter color for hover effect */
+}
+
+
+/* Main Content */
+body {
+    padding-top: 80px; /* Space for navbar */
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top of the page */
+    height: calc(100vh - 80px); /* Full height minus navbar */
+    padding: 0 20px;
+}
+
+.project-form-container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+.project-form-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.project-form-container p {
+    font-size: 1rem;
+    color: #ffcc66;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    color: #ffcc66;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.submit-btn {
+    background: #ffcc66;
+    color: #000;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #cdb114;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-form-container {
+        width: 100%;
+        max-width: 90%;
+    }
+}

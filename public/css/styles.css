@@ -1,0 +1,298 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(rgba(249, 249, 249, 0.5),rgba(248, 236, 221, 0.5)),url('bg.webp');
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+header:hover {
+    background-color: #222;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    float: left;
+    transition: transform 0.5s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    list-style: none;
+    float: right;
+}
+
+.nav-links li {
+    display: inline;
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.4s ease;
+}
+
+.nav-links a:hover {
+    color: #ffa500;
+    border-bottom: 2px solid #ffa500;
+    transition: all 0.3s ease;
+}
+
+.cta-button {
+    margin-left: 20px;
+    background: #ffa500;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff7f00;
+    transform: scale(1.05);
+}
+.back-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom of the viewport */
+    right: 20px;  /* Distance from the right side of the viewport */
+    background-color: #a53708; /* Matches your color theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #cdb114; /* Slightly lighter color for hover effect */
+}
+
+
+.hero {
+    background: url('https://source.unsplash.com/1600x900/?construction') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #633910;
+    text-align: center;
+    animation: fadeIn 2s ease-in;
+    padding: 0 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.hero-content h1:hover {
+    transform: scale(1.1);
+    color: #ffa500;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    transition: opacity 0.5s ease;
+}
+
+.hero-content p:hover {
+    opacity: 0.8;
+}
+
+#about {
+    padding: 80px 20px;
+    background-color: #fff;
+    text-align: center;
+    animation: slideUp 2s ease-in-out;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+#about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+#about h2:hover {
+    color: #ffa500;
+}
+
+#about p {
+    font-size: 18px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+}
+
+#about p:hover {
+    transform: translateY(-10px);
+}
+
+#services {
+    padding: 80px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    animation: slideRight 2s ease-in-out;
+}
+
+@keyframes slideRight {
+    from { transform: translateX(-50px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+#services h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+#services h2:hover {
+    color: #ffa500;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    width: 30%;
+    cursor: pointer;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.card h3:hover {
+    color: #ffa500;
+}
+
+.card p {
+    font-size: 16px;
+    color: #555;
+}
+
+footer {
+    padding: 30px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+footer h3:hover {
+    color: #ffa500;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .cta-button {
+        float: none;
+        margin-top: 10px;
+    }
+
+    .menu-button {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        font-size: 28px;
+        color: #fff;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .service-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+}

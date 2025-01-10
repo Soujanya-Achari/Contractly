@@ -1,0 +1,205 @@
+/* General Layout Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(-45deg, #cdb114 5%, #a53708 95%);
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(-45deg, #cdb114 5%, #a53708 95%);
+  color: #fff;
+  animation: gradient 10s ease infinite;
+}
+
+.hero h1 {
+  font-size: 36px;
+  animation: fade-in 2s;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  animation: slide-up 2s;
+}
+
+/* Projects Grid */
+.projects {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.projects-header h2 {
+  font-size: 24px;
+}
+
+.projects-header .sort-by {
+  padding: 8px;
+  border-radius: 5px;
+}
+
+/* Container for all projects */
+#projectsContainer {
+  display: flex;
+  flex-direction: column; /* Ensure one project per line */
+  gap: 20px;
+  justify-content: flex-start;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Project Cards */
+.project-card {
+  background: linear-gradient(-45deg, #cdb114d6 5%, #a53708d6 95%);
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateY(0);
+  opacity: 1;
+  animation: fadeIn 0.5s ease-out, cardEntry 0.5s ease-out forwards;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.95;
+}
+
+/* Keyframes for fade-in and card entry */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.project-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.actions button:first-child {
+  background-color: #007bff;
+  color: white;
+}
+
+.actions button:last-child {
+  background-color: #28a745;
+  color: white;
+}
+
+.cta-button {
+  background-color: #cdb114;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #a53708;
+}
+
+/* Responsive Design: One card per row */
+@media screen and (max-width: 768px) {
+  #projectsContainer {
+    flex-direction: column; /* Keep one project per row */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #projectsContainer {
+    flex-direction: column; /* Keep one project per row */
+  }
+}
+
+.back-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #a53708;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #cdb114;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(-45deg, #cdb114 5%, #a53708 95%);
+  color: white;
+  margin-top: auto;
+}
